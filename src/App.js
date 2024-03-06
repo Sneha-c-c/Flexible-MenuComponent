@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+
+import React from 'react';
+import Menu from './Menu';
+import './styles.css';
+
+const options = [
+  { id: 1, label: 'Default option', icon: null },
+  { id: 2, label: 'Hovered option', icon: null },
+  { id: 3, label: 'Disabled option', icon: null, disabled: true} ,
+  { id: 4, label: 'Text option ', icon: null },
+  { id: 4, label: 'Icon and Text Option', icon: 'assets/film-icon.jpg' },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Menu
+        options={options}
+        openUpwards={false}
+        showCheckmark={true}
+        enableSearch={true}
+      />
     </div>
   );
 }
